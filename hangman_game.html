@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+
+<head>
+
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <title>Hangman Game</title>
+
+ <!-- Bootstrap CDN ....-->
+  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+    <body onload = "startUp()">
+        <h1>Guess a word and </br><strong><i>Win!</i></strong> </h1>
+          <input id ="letter" type = "text">
+          <input type ="button" value = "letter" onClick ="Letter()"/>
+          <p id = "answer"></p>
+          <p id = "counter"></p>
+          <p id = "stat"></p>
+          <p><img src="HangmanArt.jpg" alt="80s style hangman game" align = "middle"></p>
+
+         <h2><i>Lee Grabarczyk</i> </h2>
+    
+    <script type="text/javascript">
+
+        //here is the array listing the possible random words to match
+        var randomWordArr = ["chicken", "mcnuggets", "pizza", "eggs", "soda"];
+
+        //here is where we choose a random word from the array above
+        var randomWord = randomWordArr[Math.floor(Math.random() *randomWordArr.length)];
+
+        //global asssignments
+        var s;
+        var count = 0;
+    
+        //empty array to store guesses
+        var answerArray = [];
+        
+        //here is where the answer goes with underscores
+        //the number of underscores matches the number of randomly chosen words
+        function startUp()
+        {
+            for (var i = 0; i < randomWord.length; i++)
+                {
+                    answerArray[i] = "_";
+                }
+            
+            //here is where they are put the string
+            a = answerArray.join (" ");
+            document.getElementById("answer").innerHTML;
+        }
+        function Letter ()
+        {
+            //here is where we get the letter typed in by the user
+            var letter = document.getElementById("letter").value;
+            //make sure a guess has been made
+            if (letter.length > 0)
+                {
+                    for (var i = 0; i < randomWord.length; i++)
+                    {
+                    //If the random word contains a letter that typed in by user
+                        if (randomWord[i] === letter)
+                        {
+                            //assign letter
+                            answerArray[i] = letter;
+                        }
+
+                    }
+                    //here is how many times to guess
+                    count++
+                    document.getElementById("counter").innerHTML = "Number of clicks: " + count;
+                    document.getElementById("answer").innerHTML = answerArray.join (" ");
+                }
+                if (count>10)
+                    //What happens if they dont get all letters in 10 tries
+                {
+                    document.getElementById("stat").innerHTML = "By now you should have gotten this  :(";
+
+                }
+        }
+       
+        Letter();
+    </script>
+    
+    </body>
+
+</html>

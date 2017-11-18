@@ -1,0 +1,47 @@
+#letter  {margin-left: 80px; padding-top: 10px;}
+#answer  {margin-left: 80px; padding-top: 5px;}
+#counter {margin-left: 80px; padding-top: 5px;}
+#stat    {margin-left: 80px;}
+
+
+h1 		{
+		 color: white;
+		 background-color: #FF9900;
+		 width: 380px;
+		 text-align: center;
+		 padding: 30px;
+		 font-size: 38px;
+		 margin-top: 0px;
+		 margin-bottom: 0px;
+		 border-top-right-radius: 40px;
+		 border-top-left-radius: 40px;
+
+
+		}
+
+body	{
+		 background-color: #FFFFCC;
+		 background-image: url(alphabetbackground.jpg);
+		 background size: 100%;
+
+		}
+
+h2 		{
+		 color: white;
+		 background-color: #00CCFF;
+		 width: 380px;
+		 text-align: center;
+		 font-family: Georgia; 
+		 padding-top: 50px;
+		 padding-bottom: 30px;
+		 font-size: 14px;
+		 margin-top: -30px;
+		 font-style: italic;
+		 border-radius: 10px;
+		}	
+		
+img		{width: 380px;
+		 margin-top: 0px; 
+		 background-color: #FFFFCC;}
+
+p       {margin-left: 0px;}
